@@ -36,9 +36,15 @@ async function scrapingArknightsInfo (url) {
       const $el = $(el)
 
       const operatorName = $el.find('h1').text()
+      const factionIcon = `https://gamepress.gg${$el.find('.operator-page-cell .operator-top-cell .faction-cell img').attr('src')}`
+      const profession = $el.find('.operator-page-cell .profession-cell .profession-title').text()
+      const professionIcon = `https://gamepress.gg${$el.find('.operator-page-cell .profession-cell .profession-cell-inner img').attr('src')}`
 
       console.log({
-        operatorName
+        operatorName,
+        factionIcon,
+        profession,
+        professionIcon
       })
     })
   }
